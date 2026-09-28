@@ -13,3 +13,7 @@ def return_test_status():
 @app.route('/api/test-info', methods=['GET'])
 def get_test_info():
     return {"status": "aarkster-test-info-ok"}
+
+@app.route('/api/agent-verification', methods=['GET'])
+def agent_verification():
+    return {"status": "aarkster-agent-verification-ok"}
