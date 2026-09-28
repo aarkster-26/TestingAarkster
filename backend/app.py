@@ -17,3 +17,6 @@ def get_test_info():
 @app.route('/api/agent-verification', methods=['GET'])
 def agent_verification():
     return {"status": "aarkster-agent-verification-ok"}
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
