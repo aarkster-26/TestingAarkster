@@ -5,3 +5,7 @@ app = Flask(__name__)
 @app.route('/api/health', methods=['GET'])
 def health_check():
     return {"status": "ok"}
+
+@app.route('/api/test', methods=['GET'])
+def return_test_status():
+    return {"status": "aarkster-test-ok"}
