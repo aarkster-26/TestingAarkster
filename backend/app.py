@@ -9,3 +9,7 @@ def health_check():
 @app.route('/api/test', methods=['GET'])
 def return_test_status():
     return {"status": "aarkster-test-ok"}
+
+@app.route('/api/test-info', methods=['GET'])
+def get_test_info():
+    return {"status": "aarkster-test-info-ok"}
