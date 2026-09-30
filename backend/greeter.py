@@ -12,10 +12,18 @@ def _validate_name(name):
         raise ValueError("name must be a non-empty string")
 
 
-def greet(name, excited=False):
-    """Return a friendly greeting for `name`."""
+_GREETING_STYLES = {
+    "casual": "Hello, {name}!",
+    "formal": "Good day, {name}.",
+}
+
+
+def greet(name, excited=False, style="casual"):
+    """Return a greeting for `name` in the given `style` ('casual' or 'formal')."""
     _validate_name(name)
-    text = f"Hello, {name}!"
+    if style not in _GREETING_STYLES:
+        raise ValueError(f"unsupported style: {style!r}")
+    text = _GREETING_STYLES[style].format(name=name)
     return _shout(text) if excited else text
 
 
